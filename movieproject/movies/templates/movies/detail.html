@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<h1>DETAIL</h1>
+<hr>
+
+<p>영화명 : {{ movie.title }}</p>
+<p>영화명(영어) : {{ movie.title_en }}</p>
+<p>관람객수 : {{ movie.audience }}</p>
+<p>개봉일 : {{ movie.open_date }}</p>
+<p>영화장르 : {{ movie.genre }}</p>
+<p>관람가 : {{ movie.watch_grade }}</p>
+<p>영화 평점 : {{ movie.score }}</p>
+<p>영화 포스터 주소 : {{ movie.poster_url }}</p>
+
+<a href="{% url 'movies:index' %}"><button class='btn btn-primary'>목록</button></a>
+<a href="{% url 'movies:update' movie.pk %}"><button class='btn btn-primary'>수정</button></a>
+<a href="{% url 'movies:delete' movie.pk %}"><button class='btn btn-primary'>삭제</button></a>
+{% endblock content %}

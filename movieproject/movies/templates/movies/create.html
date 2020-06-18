@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<h1>NEW</h1>
+<hr>
+<form action="{% url 'movies:create' %}" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button class='btn btn-primary'>등록</button>
+    {% endbuttons %}
+</form>
+<a href="{% url 'movies:index' %}"><button class='btn btn-primary'>목록</button></a>
+{% endblock  %}
